@@ -54,3 +54,17 @@ float getGyroZ(void) {
     updateGyroData();
     return (float)gyro_z;
 }
+// 가속도계 데이터 읽기
+int readAccel(int *x, int *y, int *z) {
+    return readSensorData(ACCELPATH "data", x, y, z);
+}
+
+// 자기장 센서 데이터 읽기
+int readMagneto(int *x, int *y, int *z) {
+    return readSensorData(MAGNEPATH "data", x, y, z);
+}
+
+// 자이로센서 데이터 읽기
+int readGyro(int *x, int *y, int *z) {
+    return readSensorData(GYROPATH "data", x, y, z);
+}
